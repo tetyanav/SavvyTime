@@ -57,11 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Configuration\Config.cs" />
     <Compile Include="Pages\LandingPage.cs" />
     <Compile Include="Pages\LocalTimePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selenium\DriverUtils.cs" />
     <Compile Include="Tests\LandingTests.cs" />
     <Compile Include="Tests\LocalTimeTests.cs" />
+    <Compile Include="URL\URLs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
