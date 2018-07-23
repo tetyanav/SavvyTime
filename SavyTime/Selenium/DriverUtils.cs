@@ -7,9 +7,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
-using SavyTime.Configuration;
+using SavvyTime.Configuration;
 
-namespace PetCareTests.Selenium
+namespace SavvyTime.Selenium
 {
     public class DriverUtils
     {

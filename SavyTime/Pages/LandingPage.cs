@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SavyTime.Pages
+namespace SavvyTime.Pages
 {
     public class LandingPage
     {
@@ -19,8 +19,10 @@ namespace SavyTime.Pages
         public IWebElement LandingHeaderConverter => _driver.FindElement(By.XPath("//div[@class='nav navbar - nav']/li[2]"));
         public IWebElement LandingHeaderLocalTime => _driver.FindElement(By.XPath("//div[@class='nav navbar - nav']/li[3]"));
         public IWebElement LandingHeaderTimers => _driver.FindElement(By.XPath("//div[@class='nav navbar - nav']/li[4]"));
-        public IWebElement LandingHeaderCalendar => _driver.FindElement(By.XPath("//div[@class='nav navbar - nav']/li[5]");
+        public IWebElement LandingHeaderCalendar => _driver.FindElement(By.XPath("//div[@class='nav navbar - nav']/li[5]"));
         public IWebElement LandingLogo => _driver.FindElement(By.ClassName("logo"));
+        public IWebElement LandingLogoImage => _driver.FindElement(By.XPath("//div[@class='logo']/img"));
+        public IWebElement LandingLogoText => _driver.FindElement(By.XPath("//div[@class='logo']/h5"));
         public IWebElement LandingHourSwitch => _driver.FindElement(By.ClassName("hour -switch"));
         public IWebElement LandingInfoContainer => _driver.FindElement(By.ClassName("content-block frame"));
         public IWebElement LandingSearchField => _driver.FindElement(By.Id("place-search"));

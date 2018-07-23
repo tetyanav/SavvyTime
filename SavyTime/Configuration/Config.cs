@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SavyTime.Configuration
+namespace SavvyTime.Configuration
 {
     public class Config
     {
