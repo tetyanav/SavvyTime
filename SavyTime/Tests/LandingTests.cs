@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using dnk.log2html.Support;
 
 namespace SavvyTime.Tests
 {
@@ -24,56 +25,74 @@ namespace SavvyTime.Tests
                 // Open Landing Page
                 var landingPage = URLs.OpenUrl(driver);
 
-                //Verify text on the page
-                //var alltext = landingPage.GetAllText();
-                //alltext.ShouldBe(landingPage.paragraphsText);
-
-
                 //Verify Header Menu Items 
-                string header = landingPage.LandingHeaderHome.Text;
-                header.ShouldBe("Home");
+                string itemHome = landingPage.HomeMenuItem.Text;
+                itemHome.ShouldBe("Home");
 
-                string header = landingPage.LandingHeaderConverter.Text;
-                header.ShouldBe("Converter");
+                string itemConverter = landingPage.ConverterMenuItem.Text;
+                itemConverter.ShouldBe("Converter");
 
-                string header = landingPage.LandingHeaderLocalTime.Text;
-                header.ShouldBe("Local Time");
+                string itemLocalTime = landingPage.LocalTimeMenuItem.Text;
+                itemLocalTime.ShouldBe("Local Time");
 
-                string header = landingPage.LandingHeaderTimers.Text;
-                header.ShouldBe("Timers");
+                string itemTimers = landingPage.TimersMenuItem.Text;
+                itemTimers.ShouldBe("Timers");
 
-                string header = landingPage.LandingHeaderCalendar.Text;
-                header.ShouldBe("Calendar");
+                string itemCalendar = landingPage.CalendarMenuItem.Text;
+                itemCalendar.ShouldBe("Calendar");
 
                 //Verify logo
                 var imageLogo = landingPage.LandingLogoImage.Displayed;
                 imageLogo.ShouldBeTrue();
 
+                var textLogo = landingPage.LandingLogoText.Displayed;
+                textLogo.ShouldBeTrue();
+
                 string logoText = landingPage.LandingLogoText.Text;
                 logoText.ShouldBe("Savvy Time World Clock");
 
+                //Verify 12/24 switch
+                var hourSwitch = landingPage.LandingHourSwitch.Displayed;
+                hourSwitch.ShouldBeTrue();
 
+                //Verify Time/Date/Location Container
+                var container = landingPage.LandingInfoContainer.Displayed;
+                container.ShouldBeTrue();
 
+                //Verify Search Field
+                var searchField = landingPage.LandingSearchField.Displayed;
+                searchField.ShouldBeTrue();
 
+                //Verify Time Converter
+                var timeConverter = landingPage.LandingTimeConverter.Displayed;
+                timeConverter.ShouldBeTrue();
 
-                //Verify images of the page
-                var image1 = landingPage.CatImage.Displayed;
-                var image2 = landingPage.DogImage.Displayed;
-                image1.ShouldBeTrue();
-                image2.ShouldBeTrue();
+                //Verify Time Around the World
+                var localTime = landingPage.LandingLocalTime.Displayed;
+                localTime.ShouldBeTrue();
 
+                //Verify Footer Items
+                string estIst = landingPage.LandingFooterEstIst.Text;
+                estIst.ShouldBe("EST to IST");
 
+                string gmtEst = landingPage.LandingFooterGmtEst.Text;
+                gmtEst.ShouldBe("GMT to EST");
 
-	            //Verify text on the page
-	            var alltext = landingPage.GetAllText();
-	            alltext.ShouldBe(landingPage.paragraphsText, "Page text");
-                //Verify Header text
-                string header = landingPage.LandingHeader.Text;
-                header.ShouldBe("Alex's Pet Business", "Header text");
+                string pstEST = landingPage.LandingFooterPstEst.Text;
+                pstEST.ShouldBe("PST to EST");
 
-                //Verify images of the page
-                landingPage.CatImage.Displayed.ShouldBeTrue("Cat img");
-                landingPage.DogImage.Displayed.ShouldBeTrue("Dog img");
+                string estGmt = landingPage.LandingFooterEstGmt.Text;
+                estGmt.ShouldBe("EST to GMT");
+
+                string pstGmt = landingPage.LandingFooterPstGmt.Text;
+                pstGmt.ShouldBe("PST to GMT");
+
+                string contactUs = landingPage.LandingFooterContactUs.Text;
+                contactUs.ShouldBe("Contact Us");
+
+                string disclaimer = landingPage.LandingFooterDisclaimer.Text;
+                disclaimer.ShouldBe("Disclaimer");
+
             });
         }
     }
