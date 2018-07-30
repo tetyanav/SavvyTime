@@ -35,12 +35,13 @@ namespace SavvyTime.Tests
                 localTimePage.FillOutSearchField(input);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
                 var KievPage = localTimePage.ClickKievUkraineQuery();
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
                 //Verify the header of the page is Kiev Time
-                GetHeaderText.ShouldBe("Kiev Time");
+                var headerKiev = KievPage.HeaderKiev.Text;
+                headerKiev.ShouldBe("Kiev Time");
 
-
-
+                //
             });
         }
     }
