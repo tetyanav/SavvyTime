@@ -15,8 +15,8 @@ namespace SavyTime
 				Path.Combine(Directory.GetParent(baseDirectory).Parent.Parent.FullName, "Results"),
 				new dnk.log2html.ReportMetaData
 				{
-					ReportName = "Test Execution Report TEST",
-					ReportEnvironment = "DEV"
+					ReportName = "Test Execution Report",
+					ReportEnvironment = SavvyTime.Configuration.Config.GetEnvironment()
 				}
 			);
 		}

@@ -1,19 +1,21 @@
-﻿using NUnit.Framework;
+﻿using dnk.log2html.Support;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using SavvyTime.Selenium;
 using SavvyTime.URL;
 using System;
-using Shouldly;
-using dnk.log2html.Support;
-using SavvyTime.Pages;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SavvyTime.Tests
+namespace SavyTime.Tests
 {
     [TestFixture]
-    public class LocalTimeTests
+    public class KievTimeTests
     {
         [Test]
-        public void LocalTime_Test()
+        public void KievlTime_Test()
         {
             IWebDriver driver = DriverUtils.CreateDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
@@ -27,17 +29,11 @@ namespace SavvyTime.Tests
 
                 string input = "Kiev";
 
-                // Verify the Page Header
-                var header = localTimePage.Header.Text;
-                header.ShouldBe("Local Time");
-
                 //Find Kiev  using the Search field???
                 localTimePage.FillOutSearchField(input);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
                 var KievPage = localTimePage.ClickKievUkraineQuery();
 
-                //Verify the header of the page is Kiev Time
-                GetHeaderText.ShouldBe("Kiev Time");
 
 
 
