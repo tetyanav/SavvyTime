@@ -1,6 +1,6 @@
 using log4net;
 
-namespace SavyTime
+namespace SavvyTime
 {
 	public class Logger
 	{

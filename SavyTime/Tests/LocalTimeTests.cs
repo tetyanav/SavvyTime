@@ -22,8 +22,12 @@ namespace SavvyTime.Tests
                 // Open Landing Page
                 var landingPage = URLs.OpenUrl(driver);
 
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+
                 //Open Local Time Page
                 var localTimePage = landingPage.ClickLocalTimeItem();
+
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
                 string input = "Kiev";
 

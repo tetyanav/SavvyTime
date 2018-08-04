@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SavvyTime.Configuration;
 using SavvyTime.Pages;
+using SavvyTime;
 using dnk.log2html.Support;
 using dnk.log2html;
 using log4net.Repository.Hierarchy;
@@ -14,7 +15,7 @@ namespace SavvyTime.URL
             driver.Navigate().GoToUrl(Config.GetURL("SavvyTimeURL"));
 
 			var url = Config.GetURL("SavvytimeURL");
-			//Logger.Log.Info("Openning URL " + url);
+			Logger.Log.Info("Openning URL " + url);
 			driver.Navigate().GoToUrl(url);
             return new LandingPage(driver);
         }

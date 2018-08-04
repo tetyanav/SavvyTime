@@ -48,7 +48,7 @@ namespace SavvyTime.Tests
                 var textLogo = landingPage.LandingLogoText.Displayed;
                 textLogo.ShouldBeTrue();
 
-                string logoText = landingPage.LandingLogoText.Text;
+                string logoText = landingPage.GetLogoText();
                 logoText.ShouldBe("Savvy Time World Clock");
 
                 //Verify 12/24 switch
@@ -56,8 +56,8 @@ namespace SavvyTime.Tests
                 hourSwitch.ShouldBeTrue();
 
                 //Verify Time/Date/Location Container
-                var container = landingPage.LandingInfoContainer.Displayed;
-                container.ShouldBeTrue();
+               // var container = landingPage.LandingInfoContainer.Displayed;
+                //container.ShouldBeTrue();
 
                 //Verify Search Field
                 var searchField = landingPage.LandingSearchField.Displayed;

@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using NUnit.Framework;
 
-namespace SavyTime
+namespace SavvyTime
 {
 	[SetUpFixture]
 	public class GlobalTestSetup

@@ -39,8 +39,9 @@ namespace SavyTime.Tests
                 //Verify the time displayed in the search results is correct one
 
                 //Verify the breadcrumbs say Home / Local Time / Ukraine / Kiev
-                var breadcrumbs = KievPage.Breadcrumbs.Text;
-                breadcrumbs.ShouldBe("Home / Local Time / Ukraine / Kiev");
+                var breadcrumbs = KievPage.GetBreadcrumbsText();
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+                breadcrumbs.ShouldBe("Home Local Time Ukraine Kiev");
 
                 // Verify Kiev-specific elements on the page
                 var currentLocalTimeHeader = KievPage.CurrentLocalTimeHeader.Text;
@@ -62,7 +63,7 @@ namespace SavyTime.Tests
                 currencyName.ShouldBe("Hryvnia (UAH)");
 
                 var timeZoneName = KievPage.TimeZoneName.Text;
-                timeZoneName.ShouldBe("EEST");
+                timeZoneName.ShouldBe("(EEST)");
 
                 
             });
