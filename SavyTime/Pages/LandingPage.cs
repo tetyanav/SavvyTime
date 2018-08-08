@@ -42,6 +42,12 @@ namespace SavvyTime.Pages
             return new LocalTimePage(_driver);
         }
 
+        public TimersPage ClickTimersItem()
+        {
+            TimersMenuItem.Click();
+            return new TimersPage(_driver);
+        }
+
         public string GetLogoText()
         {
             return LandingLogoText.Text.Replace("\r\n", " ");

@@ -80,15 +80,22 @@
     <Compile Include="Configuration\Config.cs" />
     <Compile Include="GlobalTestSetup.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Pages\CountdownPage.cs" />
+    <Compile Include="Pages\CreateCountdownPage.cs" />
+    <Compile Include="Pages\EventPage.cs" />
     <Compile Include="Pages\KievTimePage.cs" />
     <Compile Include="Pages\LandingPage.cs" />
     <Compile Include="Pages\LocalTimePage.cs" />
+    <Compile Include="Pages\TimersPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selenium\DriverUtils.cs" />
+    <Compile Include="Tests\CountdownTests.cs" />
     <Compile Include="Tests\KievTimeTests.cs" />
     <Compile Include="Tests\LandingTests.cs" />
     <Compile Include="Tests\LocalTimeTests.cs" />
     <Compile Include="URL\URLs.cs" />
+    <Compile Include="Utils\UniqueValues.cs" />
+    <Compile Include="Verification\ObjectAssertExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

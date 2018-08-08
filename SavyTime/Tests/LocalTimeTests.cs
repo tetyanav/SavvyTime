@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using SavvyTime.Selenium;
 using SavvyTime.URL;
 using System;
-using Shouldly;
+using SavvyTime.Verification;
 using dnk.log2html.Support;
 using SavvyTime.Pages;
 
@@ -33,7 +33,7 @@ namespace SavvyTime.Tests
 
                 // Verify the Page Header
                 var header = localTimePage.Header.Text;
-                header.ShouldBe("Local Time");
+                header.ShouldBe("Local Time", "Header");
 
                 //Find Kiev  using the Search field???
                 localTimePage.FillOutSearchField(input);
@@ -43,7 +43,7 @@ namespace SavvyTime.Tests
 
                 //Verify the header of the page is Kiev Time
                 var headerKiev = KievPage.HeaderKiev.Text;
-                headerKiev.ShouldBe("Kiev Time");
+                headerKiev.ShouldBe("Kiev Time", "Header Kiev Time");
 
                 //
             });

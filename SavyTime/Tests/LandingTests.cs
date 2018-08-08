@@ -3,11 +3,7 @@ using OpenQA.Selenium;
 using SavvyTime.Selenium;
 using SavvyTime.URL;
 using System;
-using Shouldly;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SavvyTime.Verification;
 using dnk.log2html.Support;
 
 namespace SavvyTime.Tests
@@ -27,71 +23,71 @@ namespace SavvyTime.Tests
 
                 //Verify Header Menu Items 
                 string itemHome = landingPage.HomeMenuItem.Text;
-                itemHome.ShouldBe("Home");
+                itemHome.ShouldBe("Home", "Home - Item Menu");
 
                 string itemConverter = landingPage.ConverterMenuItem.Text;
-                itemConverter.ShouldBe("Converter");
+                itemConverter.ShouldBe("Converter", "Converter - Item Menu");
 
                 string itemLocalTime = landingPage.LocalTimeMenuItem.Text;
-                itemLocalTime.ShouldBe("Local Time");
+                itemLocalTime.ShouldBe("Local Time", "Local Time - Item Menu");
 
                 string itemTimers = landingPage.TimersMenuItem.Text;
-                itemTimers.ShouldBe("Timers");
+                itemTimers.ShouldBe("Timers", "Timers - Item Menu");
 
                 string itemCalendar = landingPage.CalendarMenuItem.Text;
-                itemCalendar.ShouldBe("Calendar");
+                itemCalendar.ShouldBe("Calendar", "Calendar - Item Menu");
 
                 //Verify logo
                 var imageLogo = landingPage.LandingLogoImage.Displayed;
-                imageLogo.ShouldBeTrue();
+                imageLogo.ShouldBeTrue("Logo img");
 
                 var textLogo = landingPage.LandingLogoText.Displayed;
-                textLogo.ShouldBeTrue();
+                textLogo.ShouldBeTrue("Logo Text img");
 
                 string logoText = landingPage.GetLogoText();
-                logoText.ShouldBe("Savvy Time World Clock");
+                logoText.ShouldBe("Savvy Time World Clock", "Logo Text");
 
                 //Verify 12/24 switch
                 var hourSwitch = landingPage.LandingHourSwitch.Displayed;
-                hourSwitch.ShouldBeTrue();
+                hourSwitch.ShouldBeTrue("12/24 switch");
 
                 //Verify Time/Date/Location Container
                // var container = landingPage.LandingInfoContainer.Displayed;
-                //container.ShouldBeTrue();
+                //container.ShouldBeTrue("Container");
 
                 //Verify Search Field
                 var searchField = landingPage.LandingSearchField.Displayed;
-                searchField.ShouldBeTrue();
+                searchField.ShouldBeTrue("Search field");
 
                 //Verify Time Converter
                 var timeConverter = landingPage.LandingTimeConverter.Displayed;
-                timeConverter.ShouldBeTrue();
+                timeConverter.ShouldBeTrue("Time Converter");
 
                 //Verify Time Around the World
                 var localTime = landingPage.LandingLocalTime.Displayed;
-                localTime.ShouldBeTrue();
+                localTime.ShouldBeTrue("Time Around the World");
 
                 //Verify Footer Items
                 string estIst = landingPage.LandingFooterEstIst.Text;
-                estIst.ShouldBe("EST to IST");
+                estIst.ShouldBe("EST to IST", "EST to IST");
 
                 string gmtEst = landingPage.LandingFooterGmtEst.Text;
-                gmtEst.ShouldBe("GMT to EST");
+                gmtEst.ShouldBe("GMT to EST", "GMT to EST");
 
                 string pstEST = landingPage.LandingFooterPstEst.Text;
-                pstEST.ShouldBe("PST to EST");
+                pstEST.ShouldBe("PST to EST", "PST to EST");
 
                 string estGmt = landingPage.LandingFooterEstGmt.Text;
-                estGmt.ShouldBe("EST to GMT");
+                estGmt.ShouldBe("EST to GMT", "EST to GMT");
 
                 string pstGmt = landingPage.LandingFooterPstGmt.Text;
-                pstGmt.ShouldBe("PST to GMT");
+                pstGmt.ShouldBe("PST to GMT", "PST to GMT");
 
                 string contactUs = landingPage.LandingFooterContactUs.Text;
-                contactUs.ShouldBe("Contact Us");
+                contactUs.ShouldBe("Contact Us", "Contact Us");
 
                 string disclaimer = landingPage.LandingFooterDisclaimer.Text;
-                disclaimer.ShouldBe("Disclaimer");
+                disclaimer.ShouldBe("Disclaimer", "Disclaimer");
 
             });
         }
